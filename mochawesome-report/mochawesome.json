@@ -1,0 +1,176 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-10-28T13:28:15.080Z",
+    "end": "2022-10-28T13:28:15.124Z",
+    "duration": 44,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fd4e3ef0-0e7e-476c-96e1-4a6bc40da83b",
+      "title": "",
+      "fullFile": "D:\\AayshaSWQA\\New-API-Mocha-Project\\test\\Task.js",
+      "file": "\\test\\Task.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e7261b53-e2f4-458e-b514-a727a4446550",
+          "title": "Users",
+          "fullFile": "D:\\AayshaSWQA\\New-API-Mocha-Project\\test\\Task.js",
+          "file": "\\test\\Task.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Get/user",
+              "fullTitle": "Users Get/user",
+              "timedOut": false,
+              "duration": 27,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "request.get('users?access-token=${Token}').end((err,res)=>{\n    console.log(err);\n    console.log(res.body);\n    expect(res.body.data).to.not.be.empty;\n// done();\n})",
+              "err": {},
+              "uuid": "6693d9ba-60dd-42f5-8833-e2df6201893d",
+              "parentUUID": "e7261b53-e2f4-458e-b514-a727a4446550",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "GET/users/id",
+              "fullTitle": "Users GET/users/id",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "request.get('users?access-token= ${Token}&page=5&status=active&gender=female').end((err,res)=>{\n    console.log(err);\n    console.log(res.body);\n    res.body.data.forEach(data => {\n        expect(data.status).to.eq('active');\n        expect(data.gender).to.eq('female');\n        \n    });\n    // expect(res.body.data.id).to.be.eql(1);\n});",
+              "err": {},
+              "uuid": "a6be3239-94b8-4081-8fa4-7e2ce951b3e0",
+              "parentUUID": "e7261b53-e2f4-458e-b514-a727a4446550",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "POST/users",
+              "fullTitle": "Users POST/users",
+              "timedOut": false,
+              "duration": 2,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const data={\n                 email:`test-${Math.floor(Math.random()*9999)}@mail.com`,\n                 name :'Test1',\n                 gender :'female',\n                 status : 'active',\n             };\n             request.post('users')\n             .set('Authorization',`Bearer ${Token}`)\n             .send(data)\n             .then((res)=>{\n                 console.log(res.body);\n                 expect(res.body.data.email).to.eq(data.email);\n                 expect(res.body.data.name).to.eq(data.name);\n                 data.gender='male';\n                 expect(res.body.data).to.deep.include(data)\n                 userId=res.body.data.id\n             })",
+              "err": {},
+              "uuid": "acbb85c5-4090-427d-9b9f-aab4e9d366be",
+              "parentUUID": "e7261b53-e2f4-458e-b514-a727a4446550",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "PUT/users/:id",
+              "fullTitle": "Users PUT/users/:id",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const data={\n    status :\"Active\",\n    name :`Aasu ${Math.floor(Math.random()*9999)}`,\n}\nrequest.put(`users/${userId}`)\n.set('Authorization',`Bearer ${Token}`)\n.send(data)\n.then((res)=>{\n    console.log(res.body);\n})",
+              "err": {},
+              "uuid": "44ba1b91-c5a1-4a77-91df-f2c70f8dbab6",
+              "parentUUID": "e7261b53-e2f4-458e-b514-a727a4446550",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "DELETE/users/:id",
+              "fullTitle": "Users DELETE/users/:id",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "request.delete(`users/${userId}`)\n.set('Authorization',`Bearer ${Token}`)\n.then(res=>{\n    expect(res.body.data).to.be.eq(null)\n})",
+              "err": {},
+              "uuid": "7987b274-1561-4f2f-890a-b7620d648e38",
+              "parentUUID": "e7261b53-e2f4-458e-b514-a727a4446550",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6693d9ba-60dd-42f5-8833-e2df6201893d",
+            "a6be3239-94b8-4081-8fa4-7e2ce951b3e0",
+            "acbb85c5-4090-427d-9b9f-aab4e9d366be",
+            "44ba1b91-c5a1-4a77-91df-f2c70f8dbab6",
+            "7987b274-1561-4f2f-890a-b7620d648e38"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 32,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 5000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 5000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.0.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
