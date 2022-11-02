@@ -1,17 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="0.027" tests="5" failures="0">
-  <testsuite name="Root Suite" timestamp="2022-11-01T06:23:23" tests="0" time="0.000" failures="0">
+<testsuites name="Mocha Tests" time="0.044" tests="13" failures="0">
+  <testsuite name="Root Suite" timestamp="2022-11-02T13:51:15" tests="0" time="0.000" failures="0">
   </testsuite>
-  <testsuite name="Users" timestamp="2022-11-01T06:23:23" tests="5" file="D:\AayshaSWQA\New-API-Mocha-Project\test\Task.js" time="0.026" failures="0">
-    <testcase name="Users Get/user" time="0.020" classname="Get/user">
+  <testsuite name="Negative Tests" timestamp="2022-11-02T13:51:15" tests="2" file="D:\AayshaSWQA\New-API-Mocha-Project\test\Post.js" time="0.031" failures="0">
+    <testcase name="Negative Tests 401 Authentication Failed" time="0.026" classname="401 Authentication Failed">
     </testcase>
-    <testcase name="Users GET/users/id" time="0.001" classname="GET/users/id">
+    <testcase name="Negative Tests 422 validation Failed" time="0.002" classname="422 validation Failed">
+    </testcase>
+  </testsuite>
+  <testsuite name="Users" timestamp="2022-11-02T13:51:15" tests="5" file="D:\AayshaSWQA\New-API-Mocha-Project\test\Task.js" time="0.005" failures="0">
+    <testcase name="Users Get/user" time="0.000" classname="Get/user">
+    </testcase>
+    <testcase name="Users GET/users/id" time="0.000" classname="GET/users/id">
     </testcase>
     <testcase name="Users POST/users" time="0.001" classname="POST/users">
     </testcase>
     <testcase name="Users PUT/users/:id" time="0.001" classname="PUT/users/:id">
     </testcase>
     <testcase name="Users DELETE/users/:id" time="0.001" classname="DELETE/users/:id">
+    </testcase>
+  </testsuite>
+  <testsuite name="POST" timestamp="2022-11-02T13:51:15" tests="1" file="D:\AayshaSWQA\New-API-Mocha-Project\test\Test1.js" time="0.001" failures="0">
+    <testcase name="POST /users" time="0.001" classname="/users">
+    </testcase>
+  </testsuite>
+  <testsuite name="GET" timestamp="2022-11-02T13:51:15" tests="3" file="D:\AayshaSWQA\New-API-Mocha-Project\test\Test1.js" time="0.003" failures="0">
+    <testcase name="GET /user" time="0.001" classname="/user">
+    </testcase>
+    <testcase name="GET /user/:id" time="0.001" classname="/user/:id">
+    </testcase>
+    <testcase name="GET /users/id" time="0.001" classname="/users/id">
+    </testcase>
+  </testsuite>
+  <testsuite name="PUT" timestamp="2022-11-02T13:51:15" tests="1" file="D:\AayshaSWQA\New-API-Mocha-Project\test\Test1.js" time="0.001" failures="0">
+    <testcase name="PUT /users/:id" time="0.000" classname="/users/:id">
+    </testcase>
+  </testsuite>
+  <testsuite name="DELETE" timestamp="2022-11-02T13:51:15" tests="1" file="D:\AayshaSWQA\New-API-Mocha-Project\test\Test1.js" time="0.001" failures="0">
+    <testcase name="DELETE /users/:id" time="0.001" classname="/users/:id">
     </testcase>
   </testsuite>
 </testsuites>
